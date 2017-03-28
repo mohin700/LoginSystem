@@ -1,4 +1,8 @@
-<?php include "inc/header.php" ?>
+<?php include "inc/header.php"; ?>
+<?php 
+include "lib/User.php"; 
+$conn = new User;
+?>
 
 	<div class="container">
 	    <div class="panel panel-info">
