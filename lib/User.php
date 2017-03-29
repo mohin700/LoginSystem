@@ -15,8 +15,12 @@ class User{
 		$name 		= $data['name'];
 		$user 		= $data['user'];
 		$email		= $data['email'];
-		$priPass 	= $data['password'];
-		$password 	= md5($priPass);
+		$password 	= md5($data['password']);
+
+
+		$check_email= $this->checkEmail($email);
+
+
 
 		if ($name == "" || $user == "" || $email == "" || $password = "") {
 			
@@ -33,10 +37,41 @@ class User{
 			return $msg;
 		}
 
-		if (strlen($priPass) < 4) {
-			$msg = "<div class=\"alert alert-danger\"><strong>Error . . .</strong> Password too short</div>";
+
+		if ($check_email == true) {
+			$msg = "<div class=\"alert alert-danger\"><strong>Error . . .</strong> This Email is already exiest</div>";
 			return $msg;
 		}
+
+
+		$sql = "INSERT INTO user_tbl(name, user, email, password) VALUES(:name, :user, :email, :password)";
+		$query = $this->db->pdo->prepare($sql);
+		$query->bindValue(':name', $name);
+		$query->bindValue(':user', $user);
+		$query->bindValue(':email', $email);
+		$query->bindValue(':password', $password);
+		$result = $query->execute();
+		if ($result) {
+			$msg ="<div class=\"alert alert-success\"><strong>Success . . !!</strong> Registation Done</div>";
+			return $msg;
+		}
+
 	}
+
+	public function checkEmail($email){
+		$sql  = "SELECT * FROM user_tbl WHERE email = :email";
+		$query = $this->db->pdo->prepare($sql);
+		$query->bindValue(':email', $email);
+		$query->execute();
+
+		if ($query->rowCount() > 0) {
+			return true;
+		}else{
+			return false;
+		}
+
+	}
+
+
 }
  ?>
