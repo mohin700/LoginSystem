@@ -1,6 +1,17 @@
 <?php include "inc/header.php"; ?>
 <?php include "lib/User.php"; ?>
-<?php $user = new User(); ?>
+
+<?php 
+
+$user = new User();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
+	
+	$userRegi = $user->userRegister($_POST);
+
+}
+
+?>
 
 	<div class="container">
 	    <div class="panel panel-info">
@@ -9,6 +20,9 @@
 	      </div>
 	      <div class="panel-body">
 	     	<div style="max-width: 600px; margin: 0 auto;">
+	     	<?php if (isset($userRegi)) {
+	     		echo $userRegi;
+	     	} ?>
 		      	<form action="" method="POST">
 
 		      		<div class="form-group">
@@ -22,8 +36,8 @@
 		      		</div>
 
 		      		<div class="form-group">
-		      			<label for="user">Email Address</label>
-		      			<input type="email" id="user" name="user" class="form-control">
+		      			<label for="email">Email Address</label>
+		      			<input type="email" id="email" name="email" class="form-control">
 		      		</div>
 
 		      		<div class="form-group">
