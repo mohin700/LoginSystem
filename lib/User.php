@@ -15,14 +15,15 @@ class User{
 		$name 		= $data['name'];
 		$user 		= $data['user'];
 		$email		= $data['email'];
-		$password 	= md5($data['password']);
+		$pri_pass 	= $data['password'];
+		$password 	= md5($pri_pass);
 
 
 		$check_email= $this->checkEmail($email);
 
 
 
-		if ($name == "" || $user == "" || $email == "" || $password = "") {
+		if ($name == "" || $user == "" || $email == "" || $password == "") {
 			
 			$msg = "<div class=\"alert alert-danger\"><strong>Error . . .</strong> Feald most not be empty</div>";
 			return $msg;
@@ -42,6 +43,12 @@ class User{
 			$msg = "<div class=\"alert alert-danger\"><strong>Error . . .</strong> This Email is already exiest</div>";
 			return $msg;
 		}
+		if (strlen($pri_pass) < 4) {
+			$msg = "<div class=\"alert alert-danger\"><strong>Error . . .</strong> Password is Too Short</div>";
+			return $msg;
+		}
+
+
 
 
 		$sql = "INSERT INTO user_tbl(name, user, email, password) VALUES(:name, :user, :email, :password)";
