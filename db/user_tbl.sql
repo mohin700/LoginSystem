@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2017 at 11:54 AM
+-- Generation Time: Mar 30, 2017 at 08:28 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -39,16 +39,18 @@ CREATE TABLE `user_tbl` (
 --
 
 INSERT INTO `user_tbl` (`ID`, `name`, `user`, `email`, `password`) VALUES
-(1, 'Abbas Uddin', 'abbas', 'abbas@gmail.com', '123456789'),
-(2, 'Sarder Mohin', 'mohin', 'mohin@gmail.com', ''),
-(3, 'Fahad ibn sayed', 'fahad', 'fahad@gmail.com', ''),
-(4, 'Ibrahim Khalil', 'ibrahim', 'ibrahim@gmail.com', ''),
-(5, 'kalam min', 'kalam', 'kalam@gmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
-(6, 'Sourov das', 'sourov', 'sourov@ymail.com', ''),
-(7, 'Sourov das', 'sourov', 'mohinaa@gmail.com', ''),
-(8, 'hell', 'sourov', 'souroferv@ymail.com', ''),
-(9, 'Sourov das', 'sourov', 'sourosadaSDv@ymail.com', ''),
-(10, 'Sourov das', 'mohin', '', 'sourfwefrweov@ymail.com');
+(1, 'Abbas Uddin', 'abbas', 'abbas@gmail.com', '25f9e794323b453885f5181f1b624d0b'),
+(2, 'Sarder Mohin', 'mohin', 'mohin@gmail.com', '25f9e794323b453885f5181f1b624d0b'),
+(3, 'Fahad ibn sayed', 'fahad', 'fahad@gmail.com', '25f9e794323b453885f5181f1b624d0b'),
+(4, 'Ibrahim Khalil', 'ibrahim', 'ibrahim@gmail.com', '25f9e794323b453885f5181f1b624d0b'),
+(5, 'kalam min', 'kalam', 'kalam@gmail.com', '25f9e794323b453885f5181f1b624d0b'),
+(6, 'Sourov das', 'sourov', 'sourov@ymail.com', '25f9e794323b453885f5181f1b624d0b'),
+(7, 'Sourov das', 'sourov', 'mohinaa@gmail.com', '25f9e794323b453885f5181f1b624d0b'),
+(8, 'hell', 'sourov', 'souroferv@ymail.com', '25f9e794323b453885f5181f1b624d0b'),
+(9, 'Sourov das', 'sourov', 'sourosadaSDv@ymail.com', '25f9e794323b453885f5181f1b624d0b'),
+(10, 'Sourov das', 'mohin', 'sourfwefrweov@ymail.com', '25f9e794323b453885f5181f1b624d0b'),
+(11, 'Sarder Mohin', 'mohin', 'sourosASasv@ymail.com', '25f9e794323b453885f5181f1b624d0b'),
+(12, 'Sarder Mohin', 'ibrahimh', 'ibrahimghjgh@gmail.com', '25f9e794323b453885f5181f1b624d0b');
 
 --
 -- Indexes for dumped tables
@@ -68,7 +70,7 @@ ALTER TABLE `user_tbl`
 -- AUTO_INCREMENT for table `user_tbl`
 --
 ALTER TABLE `user_tbl`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
